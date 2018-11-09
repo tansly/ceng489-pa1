@@ -10,11 +10,11 @@ import sys
 # It _kinda_ works, though.
 # TODO: Explain "kinda".
 def main(argv):
-    #ciphertext = argv[1]
-    #desired_plaintext = argv[2]
+    ciphertext = argv[1]
+    desired_plaintext = argv[2]
     # For testing
-    ciphertext = vulnerable.encr(43*'S')
-    desired_plaintext = 'pwned'
+    #ciphertext = vulnerable.encr("The Magic Words are Squeamish Ossifrage.")
+    #desired_plaintext = 'pwned'
     #
     cipher_bytes = map(ord, ciphertext)
     cipher_mod = cipher_bytes[0:16] + [random.randint(0x80, 0xff) for i in xrange(16)] + cipher_bytes[32:48]
