@@ -38,7 +38,7 @@ def main(argv):
     cipher_bytes[31] = decr_out[15]^0x01
     #print(vulnerable.decr_dbg(''.join(map(chr, cipher_bytes))))
     #print(''.join(map(chr, [x^y for (x, y) in zip(decr_out, cipher_bytes[16:32])])))
-    print(''.join(map(chr, cipher_bytes)))
+    sys.stdout.write(''.join(map(chr, cipher_bytes)))
 
 if __name__ == "__main__":
     random.seed(datetime.datetime.now())
