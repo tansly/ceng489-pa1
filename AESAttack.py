@@ -25,7 +25,8 @@ def main(argv):
     desired_bytes = map(ord, desired_plaintext)
     cipher_bytes[32 - len(desired_bytes) - 1:31] = [x^y for (x, y) in zip(decr_out[16 - len(desired_bytes) - 1:15], desired_bytes)]
     cipher_bytes[31] = decr_out[15]^0x01
-    sys.stdout.write(''.join(map(chr, cipher_bytes)))
+    with open('cipher.txt', 'w') as f:
+        f.write(''.join(map(chr, cipher_bytes)))
 
 if __name__ == "__main__":
     random.seed(datetime.datetime.now())
