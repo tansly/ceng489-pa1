@@ -10,7 +10,7 @@ import sys
 # It _kinda_ works, though.
 # TODO: Explain "kinda".
 def main(argv):
-    ciphertext = argv[1]
+    ciphertext = argv[1].decode("hex")
     desired_plaintext = argv[2]
     cipher_bytes = map(ord, ciphertext)
     cipher_mod = cipher_bytes[0:16] + [random.randint(0x80, 0xff) for i in xrange(16)] + cipher_bytes[32:48]
